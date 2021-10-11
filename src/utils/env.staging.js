@@ -1,11 +1,10 @@
 /**
  * @author Chathurika Senani
  * @create date 2021-10-11 19:23:33
- * @modify date 2021-10-11 21:23:30
+ * @modify date 2021-10-11 21:56:04
  */
 
  const IS_PRODUCTION = false;
- //const BASE_URL_PREFIX = 'https://oneapp.hutch.lk/hutch_1_0_uat/'; // Dev
  const BASE_URL = 'http://127.0.0.1:8080/application/'; // QA
 //  const BASE_URL = `${BASE_URL_PREFIX}index.php`;
 //  const IMAGE_URL = `${BASE_URL_PREFIX}image_upload/`;
