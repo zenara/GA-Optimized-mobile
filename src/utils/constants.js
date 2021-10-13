@@ -1,7 +1,7 @@
 /**
  * @author Chathurika Senani
  * @create date 2021-10-11 19:29:38
- * @modify date 2021-10-11 19:58:07
+ * @modify date 2021-10-13 09:46:04
  */
 
 const urls = {
@@ -17,27 +17,8 @@ const http = {
 	MULTIPART: 'MULTIPART'
 };
 
-const gap = 15;
-const buttonRadius = 10;
-const DEFAULT_LANG = 'en';
 const APP_STORAGE_PREFIX = 'msc@';
 const DEFAULT_TIMEOUT = 20;
-const FAP_COUNT = 2;
-
-const actionTypes = {
-	AUTH: 'AUTH',
-	APP_START: 'APP_START',
-	DASHBOARD: 'DASHBOARD',
-	LOGOUT: 'LOGOUT',
-	LOADING: 'LOADING',
-	LANGUAGE_CHANGE: 'LANGUAGE_CHANGE',
-	GET_URLS: 'GET_URLS',
-	SWITCH_NUMBER: 'SWITCH_NUMBER',
-	UNREADCOUNT: 'UNREADCOUNT',
-	PAYMENT: 'PAYMENT',
-	HIDE_UPDATE: 'HIDE_UPDATE',
-	EXIT_WARNING: 'EXIT_WARNING'
-};
 
 const storageKey = {
 	USER: 'USER',
@@ -50,33 +31,10 @@ const storageKey = {
 	PRIMARY_NAME: 'PRIMARY_NAME'
 };
 
-const packageType = {
-	PREPAID: 'pre',
-	POSTPAID: 'post'
-};
-
-const routeMap = {
-	'billinformation': 'billInformation',
-	'packages': 'Packages',
-	'callerManagement': 'callermanagement',
-	'roaming': 'roamingIdd',
-	'vas': 'Vas',
-	'promotion': 'promotions',
-	'myOffers': 'myOffers',
-	'creditManagement': 'creditManagement'
-};
-
 export default {
 	urls,
 	http,
-	gap,
-	DEFAULT_LANG,
 	APP_STORAGE_PREFIX,
-	actionTypes,
 	storageKey,
-	packageType,
-	routeMap,
 	DEFAULT_TIMEOUT,
-	buttonRadius,
-	FAP_COUNT
 };
