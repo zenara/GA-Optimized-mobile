@@ -5,5 +5,8 @@
  */
 
 export default {
-    white: '#ffffff'
+    white: '#ffffff',
+    background: '#f0ebff',
+    primary: '#2f2180',
+    secondary: ''
 };
