@@ -5,9 +5,10 @@
  */
 
 import React, { useEffect } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import appstyles from '../utils/styles';
 import { getAlgorithms } from './actions';
+import { VictoryBar, VictoryChart, VictoryTheme } from "victory-native";
 
 const HomeScreen = () => {
 
@@ -28,11 +29,34 @@ const HomeScreen = () => {
     })
   };
 
+  const data = [
+    { x_axis: 1, y_axis: 13000 },
+    { x_axis: 2, y_axis: 16500 },
+    { x_axis: 3, y_axis: 14250 },
+    { x_axis: 4, y_axis: 19000 }
+  ];
+
   return (
     <View style={appstyles.container}>
-      <Text style={{fontSize: 30}}>Home Screen</Text>
+      <Text style={styles.text}>AlgoApp Home</Text>
+      <View style={styles.chartContainer}>
+        <VictoryChart width={350} theme={VictoryTheme.material}>
+          <VictoryBar data={data} x="x_axis" y="y_axis" />
+        </VictoryChart>
+      </View>
     </View>
   );
 };
 
 export default HomeScreen;
+
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 25,
+    textAlign: 'center'
+  },
+  chartContainer: {
+    padding: 20,
+    alignItems: 'center'
+  }
+})
