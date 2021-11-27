@@ -9,7 +9,7 @@ import colors from './colors';
 
 const appstyles = StyleSheet.create({
 	container: {
-		backgroundColor: colors.white,
+		backgroundColor: colors.background,
 		flex: 1
 	}
 });

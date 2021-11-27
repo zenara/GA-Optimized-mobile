@@ -30,7 +30,7 @@ const App = () => {
 
   return (
     <NavigationContainer>
-        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+        <StatusBar barStyle={isDarkMode ? 'dark-content' : 'light-content'} />
         <OnboardingNavigator />
     </NavigationContainer>
   );
