@@ -8,5 +8,7 @@ export default {
     white: '#ffffff',
     background: '#f0ebff',
     primary: '#2f2180',
-    secondary: ''
+    ga: '#a10340',
+    iqr: '#1814a3',
+    lr: '#388f53'
 };

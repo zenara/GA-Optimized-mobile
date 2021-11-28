@@ -5,9 +5,6 @@ import { RadioButton } from 'react-native-paper';
 import { colors } from '../utils';
  
 const TopBar = (props) => {
-    const [ga, setGa] = useState(false);
-    const [iqr, setIqr] = useState(false);
-    const [lr, setLr] = useState(false);
  
 return (
     <View style={styles.topContainer}>
@@ -32,30 +29,30 @@ return (
         <View style={styles.secondaryContainer}>
             <View style={styles.chartLineContainer}>
                 <RadioButton
-                    color={colors.primary}
-                    value={ga}
-                    status={ ga ? 'checked' : 'unchecked' }
-                    onPress={() => setGa(!ga)}
+                    color={colors.ga}
+                    value={props.ga}
+                    status={ props.ga ? 'checked' : 'unchecked' }
+                    onPress={() => props.setGa(!props.ga)}
                 />
-                <Text>Generic Algorithm</Text>
+                <Text style={{color: colors.ga}}>Generic Algorithm</Text>
             </View>
             <View style={styles.chartLineContainer}>
                 <RadioButton
-                    color={colors.primary}
-                    value={iqr}
-                    status={ iqr ? 'checked' : 'unchecked' }
-                    onPress={() => setIqr(!iqr)}
+                    color={colors.iqr}
+                    value={props.iqr}
+                    status={ props.iqr ? 'checked' : 'unchecked' }
+                    onPress={() => props.setIqr(!props.iqr)}
                 />
-                <Text>Inter Quartile Range</Text>
+                <Text style={{color: colors.iqr}}>Inter Quartile Range</Text>
             </View>
             <View style={styles.chartLineContainer}>
                 <RadioButton
-                    color={colors.primary}
-                    value={lr}
-                    status={ lr ? 'checked' : 'unchecked' }
-                    onPress={() => setLr(!lr)}
+                    color={colors.lr}
+                    value={props.lr}
+                    status={ props.lr ? 'checked' : 'unchecked' }
+                    onPress={() => props.setLr(!props.lr)}
                 />
-                <Text>Linear Regression</Text>
+                <Text style={{color: colors.lr}}>Linear Regression</Text>
             </View>
         </View>
     </View>

@@ -15,6 +15,9 @@ import TopBar from '../components/topBar';
 
 const HomeScreen = () => {
   const [ selectedGraph, setSelectedGraph ] = useState('');
+  const [ga, setGa] = useState(false);
+  const [iqr, setIqr] = useState(false);
+  const [lr, setLr] = useState(false);
 
   useEffect(() => {
 		fetchData(false);
@@ -53,6 +56,16 @@ const HomeScreen = () => {
     { x: 7, y: 0 }
     ];
 
+  const data3 = [
+    { x: 1, y: 2 },
+    { x: 2, y: 0 },
+    { x: 3, y: 3 },
+    { x: 4, y: 0 },
+    { x: 5, y: 3 },
+    { x: 6, y: 0},
+    { x: 7, y: 2 }
+    ];
+
   const graphs = ["Graph 1", "Graph 2", "Graph 3", "Graph 4"];
 
   return (
@@ -60,12 +73,12 @@ const HomeScreen = () => {
       <Text style={styles.text}>GA - Optimized</Text>
       <ScrollView style={styles.chartContainer}>
 
-        <TopBar data={graphs} setSelectedGraph={setSelectedGraph}/>
+        <TopBar data={graphs} setSelectedGraph={setSelectedGraph} setGa={setGa} setIqr={setIqr} setLr={setLr} ga={ga} iqr={iqr} lr={lr}/>
 
         <ChartContainer>
 
-          <VictoryGroup
-            color="red"
+          { ga ? <VictoryGroup
+            color={colors.ga}
             labels={({ datum }) => `y: ${datum.y}`}
             labelComponent={
               <VictoryTooltip
@@ -78,9 +91,10 @@ const HomeScreen = () => {
             <VictoryScatter
               size={({ active }) => active ? 8 : 3}
             />
-          </VictoryGroup>
+          </VictoryGroup> : null }
 
-          <VictoryGroup
+          { iqr ? <VictoryGroup
+            color={colors.iqr}
             labels={({ datum }) => `y: ${datum.y}`}
             labelComponent={
               <VictoryTooltip
@@ -93,7 +107,23 @@ const HomeScreen = () => {
             <VictoryScatter
               size={({ active }) => active ? 8 : 3}
             />
-          </VictoryGroup>
+          </VictoryGroup> : null }
+
+          { lr ? <VictoryGroup
+            color={colors.lr}
+            labels={({ datum }) => `y: ${datum.y}`}
+            labelComponent={
+              <VictoryTooltip
+                style={{ fontSize: 10 }}
+              />
+            }
+            data={data3}
+          >
+            <VictoryLine/>
+            <VictoryScatter
+              size={({ active }) => active ? 8 : 3}
+            />
+          </VictoryGroup> : null }
 
         </ChartContainer>
       </ScrollView>
