@@ -4,16 +4,17 @@
  * @modify date 2021-10-11 20:00:59
  */
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import appstyles from '../utils/styles';
 import { getAlgorithms } from './actions';
 import { colors } from '../utils';
 import { VictoryScatter, VictoryTooltip, VictoryGroup, VictoryLine } from "victory-native";
 import ChartContainer from '../components/chartContainer';
-
+import TopBar from '../components/topBar';
 
 const HomeScreen = () => {
+  const [ selectedGraph, setSelectedGraph ] = useState('');
 
   useEffect(() => {
 		fetchData(false);
@@ -52,10 +53,15 @@ const HomeScreen = () => {
     { x: 7, y: 0 }
     ];
 
+  const graphs = ["Graph 1", "Graph 2", "Graph 3", "Graph 4"];
+
   return (
     <View style={appstyles.container}>
       <Text style={styles.text}>GA - Optimized</Text>
       <ScrollView style={styles.chartContainer}>
+
+        <TopBar data={graphs} setSelectedGraph={setSelectedGraph}/>
+
         <ChartContainer>
 
           <VictoryGroup
@@ -104,7 +110,6 @@ const styles = StyleSheet.create({
     paddingVertical: 10
   },
   chartContainer: {
-    marginHorizontal: 10,
     padding: 10,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
