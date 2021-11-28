@@ -1,7 +1,5 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
 import { VictoryChart, VictoryVoronoiContainer } from "victory-native";
-import { colors } from '../utils';
  
 const ChartContainer = (props) => {
  
